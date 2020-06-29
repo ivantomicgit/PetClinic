@@ -2,7 +2,7 @@ package com.ivan.service;
 
 import java.util.List;
 
-import com.ivan.dto.VlasnikDTO;
+
 import com.ivan.entity.Vlasnik;
 
 public interface VlasnikServis {

@@ -23,7 +23,7 @@ public class VlasnikMapperImpl implements VlasnikMapper {
 		vlasnikDTO.setIme(vlasnik.getIme());
 		vlasnikDTO.setPrezime(vlasnik.getPrezime());
 		vlasnikDTO.setEmail(vlasnik.getEmail());	
-		//vlasnikDTO.setLjubimci(ljubimacMapper.toListDTOs(vlasnik.getLjubimci()));
+		vlasnikDTO.setLjubimci(ljubimacMapper.toListDTOs(vlasnik.getLjubimci()));
 		return vlasnikDTO;
 	}
 
@@ -34,7 +34,7 @@ public class VlasnikMapperImpl implements VlasnikMapper {
 		vlasnik.setIme(vlasnikDTO.getIme());
 		vlasnik.setPrezime(vlasnikDTO.getPrezime());
 		vlasnik.setEmail(vlasnikDTO.getEmail());
-		//vlasnik.setLjubimci(ljubimacMapper.toList(vlasnikDTO.getLjubimci()));
+		vlasnik.setLjubimci(ljubimacMapper.toList(vlasnikDTO.getLjubimci()));
 		return vlasnik;
 	}
 

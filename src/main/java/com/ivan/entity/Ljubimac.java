@@ -28,7 +28,7 @@ public class Ljubimac extends ImeEntitet{
 	
 	
 	private String tezina;
-	//private TipLjubimaca tip;
+	
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vlasnik_id")

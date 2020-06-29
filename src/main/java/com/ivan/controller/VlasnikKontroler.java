@@ -43,40 +43,24 @@ public class VlasnikKontroler {
 		return new ResponseEntity<VlasnikDTO>(vlasnikMapper.toVlasnikDTO(vlasnik), HttpStatus.CREATED);
 
 	}
-	
+
 	@GetMapping("/read/vlasnik/{idVlasnika}")
-	public ResponseEntity<VlasnikDTO> readVlasnik(@PathVariable Integer idVlasnika){
-		
-		return new ResponseEntity<VlasnikDTO>(vlasnikMapper.toVlasnikDTO(vlasnikServis.read(idVlasnika)) ,HttpStatus.OK);
-		
+	public ResponseEntity<VlasnikDTO> readVlasnik(@PathVariable Integer idVlasnika) {
+
+		return new ResponseEntity<VlasnikDTO>(vlasnikMapper.toVlasnikDTO(vlasnikServis.read(idVlasnika)),
+				HttpStatus.OK);
+
 	}
-	
+
 	@GetMapping("/listaVlasnika")
-	public ResponseEntity<?> sviVlasnici(){
-		
+	public ResponseEntity<?> sviVlasnici() {
+
 		List<VlasnikDTO> listVlasnika = vlasnikMapper.toListDTOs(vlasnikServis.findAll());
-		
-		return new ResponseEntity<List<VlasnikDTO>>(listVlasnika ,HttpStatus.OK);
-		
+
+		return new ResponseEntity<List<VlasnikDTO>>(listVlasnika, HttpStatus.OK);
+
 	}
-	
-	@PutMapping("/update/vlasnik/{idVlasnika}")
-	public ResponseEntity<VlasnikDTO> updateVlsnika(@PathVariable Integer idVlasnika, @RequestBody VlasnikDTO vlasnikDTO){
-		
-		Vlasnik vlasnik = vlasnikServis.update(idVlasnika, vlasnikMapper.toVlasnik(vlasnikDTO));
-			
-		return new ResponseEntity<VlasnikDTO>(vlasnikMapper.toVlasnikDTO(vlasnik), HttpStatus.OK);	
-		
-	}
-	
-	@DeleteMapping("/delete/{id}")
-	public ResponseEntity<?> deleteVlasnik(@PathVariable Integer id){
-		
-		vlasnikServis.delete(id);
-		return new ResponseEntity<String>("Vlasnik za id: " + id +" je obrisan", HttpStatus.OK);
-		
-	}
-	
+
 	@GetMapping("/prezime/{prezime}")
 	public ResponseEntity<?> vratiVlasnikaPoPrezimenu(@PathVariable String prezime) {
 		List<Vlasnik> listaSaIstimPrezimenom = vlasnikServis.findVlasnikByPrezime(prezime);
@@ -84,7 +68,23 @@ public class VlasnikKontroler {
 		return new ResponseEntity<List<VlasnikDTO>>(vlasnikMapper.toListDTOs(listaSaIstimPrezimenom), HttpStatus.OK);
 
 	}
-	
-	
-	
+
+	@PutMapping("/update/vlasnik/{idVlasnika}")
+	public ResponseEntity<VlasnikDTO> updateVlsnika(@PathVariable Integer idVlasnika,
+			@RequestBody VlasnikDTO vlasnikDTO) {
+
+		Vlasnik vlasnik = vlasnikServis.update(idVlasnika, vlasnikMapper.toVlasnik(vlasnikDTO));
+
+		return new ResponseEntity<VlasnikDTO>(vlasnikMapper.toVlasnikDTO(vlasnik), HttpStatus.OK);
+
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public ResponseEntity<?> deleteVlasnik(@PathVariable Integer id) {
+
+		vlasnikServis.delete(id);
+		return new ResponseEntity<String>("Vlasnik za id: " + id + " je obrisan", HttpStatus.OK);
+
+	}
+
 }
