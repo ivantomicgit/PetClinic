@@ -11,6 +11,7 @@ class Ljubimac extends Component {
       lsitaLjubimaca: [],
       ljubimac: {
         ime: "",
+       
       },
     };
   }
@@ -24,9 +25,11 @@ class Ljubimac extends Component {
       .then((response) => {
         this.setState({
           lsitaLjubimaca: response.data,
+        
         });
       })
       .catch((err) => {});
+      console.log(this.state.lsitaLjubimaca)
   }
   render() {
     let sviLjubimci = this.state.lsitaLjubimaca.map((ljubimac) => (

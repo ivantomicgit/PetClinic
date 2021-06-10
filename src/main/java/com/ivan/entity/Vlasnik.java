@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -22,8 +23,8 @@ public class Vlasnik extends ApstraktnaOsoba{
 	private static final long serialVersionUID = 1L;
 
 	    
-    @OneToMany(mappedBy = "vlasnik", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Ljubimac> ljubimci = new ArrayList<Ljubimac>();
+    @OneToMany(mappedBy = "vlasnik",  cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Ljubimac> ljubimci;
     
-    
+    //fetch = FetchType.LAZY,
 }

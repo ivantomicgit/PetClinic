@@ -14,11 +14,12 @@ function App() {
       <BrowserRouter>
         <div>
           <Header/>
-          <Route path="/" component={Welcome}  />
+         
           <Route path="/vlasnik" component={Vlasnik} />
           <Route path="/ljubimac" component={Ljubimac} />
           <Route path="/poseta" component={Poseta} />
           <Route path="/jedanVlasnik" component={JedanVlasnik} />
+          <Route path="/" component={Welcome}  exact/>
         </div>
       </BrowserRouter>
      

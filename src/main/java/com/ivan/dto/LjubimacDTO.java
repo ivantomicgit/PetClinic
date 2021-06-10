@@ -15,5 +15,13 @@ public class LjubimacDTO {
 	private List<PosetaDTO> listaPoseta;
 //	private String tezina;
 //	private LocalDate datumRodjenja;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 	
 }

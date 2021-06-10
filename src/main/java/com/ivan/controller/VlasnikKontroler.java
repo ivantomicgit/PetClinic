@@ -1,7 +1,9 @@
 package com.ivan.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -56,6 +58,7 @@ public class VlasnikKontroler {
 	public ResponseEntity<?> sviVlasnici() {
 
 		List<VlasnikDTO> listVlasnika = vlasnikMapper.toListDTOs(vlasnikServis.findAll());
+		System.out.println(Arrays.toString(listVlasnika.toArray()));
 
 		return new ResponseEntity<List<VlasnikDTO>>(listVlasnika, HttpStatus.OK);
 

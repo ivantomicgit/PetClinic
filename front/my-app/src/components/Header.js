@@ -13,23 +13,12 @@ const Header = (props) =>{
     <div>
       <Nav Nav className="justify-content-center" tabs >
         <NavItem>
-        <NavLink to="/" activeClassName="active" tag={RRNavLink}>Welcome</NavLink> 
+        <NavLink to="/"  tag={RRNavLink}>Welcome</NavLink> 
           {/* <NavLink href="/" >Welcome</NavLink> */}
         </NavItem>
-        {/* <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle nav caret>
-            Dropdown
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem disabled>Action</DropdownItem>
-            <DropdownItem>Another Action</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Another Action</DropdownItem>
-          </DropdownMenu>
-        </Dropdown> */}
+       
         <NavItem>
-        <NavLink to="/vlasnik" activeClassName="active" tag={RRNavLink}>Vlasnici</NavLink> 
+        <NavLink to="/vlasnik"  tag={RRNavLink}>Vlasnici</NavLink> 
           {/* <NavLink href="/vlasnik">Vlasnici</NavLink> */}
         </NavItem>
         <NavItem>
